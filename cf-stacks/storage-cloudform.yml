@@ -1,4 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
+Description: S3 provision
+
 Resources:
   Bucket:
     Type: 'AWS::S3::Bucket'
@@ -11,6 +13,7 @@ Resources:
       Name: 'BucketS3'
       Type: String
       Value: !Ref Bucket
+    DependsOn: Bucket
 
   BucketArnSSM:
     Type: AWS::SSM::Parameter
@@ -18,4 +21,5 @@ Resources:
       Name: 'BucketS3-Arn'
       Type: String
       Value: !GetAtt Bucket.Arn
+    DependsOn: Bucket
   
