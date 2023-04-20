@@ -22,4 +22,3 @@ Resources:
       Type: String
       Value: !GetAtt Bucket.Arn
     DependsOn: Bucket
-  

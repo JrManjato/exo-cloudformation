@@ -5,7 +5,7 @@ on:
     branches:
       - "main"
     paths:
-      - "cf-stacks/storage-stack.yml"
+      - "cf-stacks/storage-cloudform.yml"
 
 jobs:
   deploy:
@@ -25,4 +25,4 @@ jobs:
 
       - name: Deploy CloudFormation stack
         run: |
-          aws cloudformation create-stack --stack-name MyStack --template-body cf-stacks/storage-stack.yml --region us-east-1 --capabilities CAPABILITY_IAM
+          aws cloudformation create-stack --stack-name MyStack --template-body cf-stacks/storage-cloudform.yml --region us-east-1 --capabilities CAPABILITY_IAM
